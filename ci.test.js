@@ -12,7 +12,9 @@ describe('CI sequence', () => {
   });
 
   // TODO add the tests between these comments =>
-
+  it('does not contain the sneaky bug', () => {
+    expect( /.*sneaky\s+bug.*/gi.test(fileContents)).toBe(false);
+  });
   // TODO <= add the tests between these comments
   it('5. Merge/rebase commits from master. Make tests pass on the merge result.', () => {
     expect(/.*merge.*commits.*tests\s+pass.*/ig.test(fileContents)).toBe(true);
